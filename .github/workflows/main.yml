@@ -24,8 +24,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
+      - name: install Python3.5
+        with:
+              python-version : 3.5
       # Runs a single command using the runners shell
+      - name: Test Echo
+        run : echo "Hello Git actions"
       - name: Run tests
         run: make all
 
